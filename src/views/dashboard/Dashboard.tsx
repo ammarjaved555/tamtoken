@@ -19,12 +19,14 @@ import { selectBlogSearch } from "../../store/blogs/selectors";
 import Text2 from "../../components/text/Text2";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
   const [isPublished, setIsPublished] = useState(false);
 
   const dispatch = useAppDispatch();
   const searchText = useAppSelector(selectBlogSearch);
+  const navigate = useNavigate();
 
   const theme = useTheme();
 
@@ -36,6 +38,10 @@ const Dashboard = () => {
 
   const handleSearchSubmit = (evt: any) => {
     if (evt.key === "Enter") dispatch(getAllBlogs({ search: search, page: 1 }));
+  };
+
+  const handleDetail = () => {
+    navigate("/sell");
   };
 
   const label = { inputProps: { "aria-label": "Checkbox demo" } };
@@ -338,6 +344,7 @@ const Dashboard = () => {
                     aria-label="delete"
                     onClick={(event: any) => {
                       event.stopPropagation();
+                      handleDetail();
                     }}
                   >
                     <RemoveRedEyeOutlinedIcon
