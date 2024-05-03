@@ -91,39 +91,30 @@ const Navigation: FC = () => {
           {label}
         </Box>
       )}
-      {loggedinUser !== "" &&
-        <Box
-          sx={{
-            position: "relative",
-            color: "text.disabled",
-            cursor: "pointer",
-            textDecoration: "none",
-            fontWeight: 600,
-            display: "inline-flex",
-            alignItems: "center",
-            justifyContent: "center",
-            px: { xs: 0, lg: 3 },
-            mb: { xs: 3, lg: 0 },
-            fontSize: { xs: "1.2rem", lg: "inherit" },
-            "& > div": { display: "none" },
-            "&.current>div": { display: "block" },
-            "&:hover": { color: "primary.main", "&>div": { display: "block" } }
-          }}
-          onClick={() => handleLogout()}
-        >
-          <Box
-            sx={{
-              position: "absolute",
-              top: 12,
-              transform: "rotate(3deg)",
-              "& img": { width: 44, height: "auto" }
-            }}
-          >
-            {/* eslint-disable-next-line */}
-            <img src="/images/headline-curve.svg" alt="Headline curve" />
-          </Box>
-          Log Out
-        </Box>}
+      <Box
+        sx={{
+          position: "relative",
+          color: "white",
+          cursor: "pointer",
+          textDecoration: "none",
+          textTransform: "uppercase",
+          fontWeight: 600,
+          display: "inline-flex",
+          alignItems: "center",
+          justifyContent: "center",
+          px: { xs: 0, lg: 3 },
+          mb: { xs: 3, lg: 0 },
+          fontSize: "24px",
+          lineHeight: "6px",
+          width: "324px",
+          height: "45px",
+          borderRadius: "6px",
+          backgroundColor: "#00dbe3"
+        }}
+        onClick={() => handleLogout()}
+      >
+        Connect Wallet
+      </Box>
     </Box>
   );
 };
