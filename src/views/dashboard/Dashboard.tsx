@@ -278,6 +278,7 @@ const Dashboard = () => {
                     aria-label="delete"
                     onClick={(event: any) => {
                       event.stopPropagation();
+                      handleDetail();
                     }}
                   >
                     <RemoveRedEyeOutlinedIcon
