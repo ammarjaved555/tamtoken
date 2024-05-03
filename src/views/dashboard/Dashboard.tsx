@@ -40,136 +40,37 @@ const Dashboard = () => {
 
   const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
-  return (
-    <Box>
+  return <Box>
       <Box sx={{ background: "linear-gradient(to bottom, #173039, #00b4c9)" }}>
-        <Box
-          sx={{
-            padding: "50px 80px",
-            [theme.breakpoints.up("sm")]: { maxWidth: "1400px" },
-            width: "calc(100vw - 6px)",
-            margin: "auto",
-            textAlign: "left"
-          }}
-        >
-          <Typography
-            sx={{
-              fontSize: "45px",
-              lineHeight: "60px",
-              color: "#fff",
-              fontWeight: 700,
-              marginBottom: "20px"
-            }}
-          >
+        <Box sx={{ padding: "50px 80px", [theme.breakpoints.up("sm")]: { maxWidth: "1400px" }, width: "calc(100vw - 6px)", margin: "auto", textAlign: "left" }}>
+          <Typography sx={{ fontSize: "45px", lineHeight: "60px", color: "#fff", fontWeight: 700, marginBottom: "20px" }}>
             Filters
           </Typography>
-          <SearchBar
-            search={search}
-            handleSearch={handleSearchChange}
-            handleKeyDown={handleSearchSubmit}
-          />
-          <Box
-            sx={{ display: "flex", alignItems: "center", paddingLeft: "20px" }}
-          >
-            <Checkbox
-              {...label}
-              checked={isPublished}
-              sx={{ "& .MuiSvgIcon-root": { fill: "#ffffff" } }}
-              onClick={(e: any) => setIsPublished(!isPublished)}
-            />
-            <Typography
-              sx={{
-                fontSize: "18px",
-                lineHeight: "60px",
-                color: "#fff",
-                fontWeight: 400
-              }}
-            >
+          <SearchBar search={search} handleSearch={handleSearchChange} handleKeyDown={handleSearchSubmit} />
+          <Box sx={{ display: "flex", alignItems: "center", paddingLeft: "20px" }}>
+            <Checkbox {...label} checked={isPublished} sx={{ "& .MuiSvgIcon-root": { fill: "#ffffff" } }} onClick={(e: any) => setIsPublished(!isPublished)} />
+            <Typography sx={{ fontSize: "18px", lineHeight: "60px", color: "#fff", fontWeight: 400 }}>
               Show only whitelisted properties's offers
             </Typography>
           </Box>
         </Box>
       </Box>
-      <Box
-        sx={{
-          minHeight: "calc(100vh - 450px)",
-          backgroundColor: "#fff",
-          padding: "80px 24px",
-          display: "flex",
-          gap: "20px"
-        }}
-      >
+      <Box sx={{ minHeight: "calc(100vh - 450px)", backgroundColor: "#fff", padding: "80px 24px", display: "flex", gap: "20px" }}>
         <Box sx={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-          <Button
-            variant="contained"
-            sx={{
-              backgroundColor: "#00dbe3",
-              borderRadius: "6px",
-              width: "352px",
-              height: "64px",
-              fontSize: "24px",
-              lineHeight: "60px",
-              textTransform: "uppercase",
-              color: "#ffffff",
-              fontWeight: 700
-            }}
-          >
+          <Button variant="contained" sx={{ backgroundColor: "#00dbe3", borderRadius: "6px", width: "352px", height: "64px", fontSize: "24px", lineHeight: "60px", textTransform: "uppercase", color: "#ffffff", fontWeight: 700 }}>
             Sell
           </Button>
-          <Button
-            variant="contained"
-            sx={{
-              backgroundColor: "#23a2bb",
-              borderRadius: "6px",
-              width: "352px",
-              height: "64px",
-              fontSize: "24px",
-              lineHeight: "60px",
-              textTransform: "uppercase",
-              color: "#ffffff",
-              fontWeight: 700
-            }}
-          >
+          <Button variant="contained" sx={{ backgroundColor: "#23a2bb", borderRadius: "6px", width: "352px", height: "64px", fontSize: "24px", lineHeight: "60px", textTransform: "uppercase", color: "#ffffff", fontWeight: 700 }}>
             Buy
           </Button>
-          <Button
-            variant="contained"
-            sx={{
-              backgroundColor: "#173039",
-              borderRadius: "6px",
-              width: "352px",
-              height: "64px",
-              fontSize: "24px",
-              lineHeight: "60px",
-              textTransform: "uppercase",
-              color: "#ffffff",
-              fontWeight: 700
-            }}
-          >
+          <Button variant="contained" sx={{ backgroundColor: "#173039", borderRadius: "6px", width: "352px", height: "64px", fontSize: "24px", lineHeight: "60px", textTransform: "uppercase", color: "#ffffff", fontWeight: 700 }}>
             Exchange
           </Button>
         </Box>
-        <Box sx={{ overflow: "auto", width: { xs: "300px", sm: "auto" } }}>
-          <Table
-            aria-label="simple table"
-            sx={{
-              whiteSpace: "nowrap",
-              borderRadius: "8px",
-              border: "2px solid #00dbe3",
-              "& th, td": {
-                borderRadius: "8px"
-              }
-            }}
-          >
+        <Box sx={{ overflow: "auto", width: { sm: "100%" } }}>
+          <Table aria-label="simple table" sx={{ whiteSpace: "nowrap", borderRadius: "8px", border: "2px solid #00dbe3", "& th, td": { borderRadius: "8px" } }}>
             <TableHead sx={{ background: "#f3f3f3" }}>
-              <TableRow
-                sx={{
-                  "& th": {
-                    padding: "0px 5px",
-                    borderRight: "2px solid #00dbe3"
-                  }
-                }}
-              >
+              <TableRow sx={{ "& th": { padding: "0px 5px", borderRight: "2px solid #00dbe3" } }}>
                 <TableCell align="center">
                   <Text2>Offer ID</Text2>
                 </TableCell>
@@ -209,16 +110,7 @@ const Dashboard = () => {
               </TableRow>
             </TableHead>
             <TableBody>
-              <TableRow
-                hover
-                sx={{
-                  cursor: "pointer",
-                  "& td": {
-                    padding: "0px 5px",
-                    borderRight: "2px solid #00dbe3"
-                  }
-                }}
-              >
+              <TableRow hover sx={{ cursor: "pointer", "& td": { padding: "0px 5px", borderRight: "2px solid #00dbe3" } }}>
                 <TableCell align="center">
                   <Text2>371</Text2>
                 </TableCell>
@@ -250,40 +142,21 @@ const Dashboard = () => {
                   <Text2>12.28838</Text2>
                 </TableCell>
                 <TableCell align="center">
-                  <IconButton
-                    aria-label="delete"
-                    onClick={(event: any) => {
+                  <IconButton aria-label="delete" onClick={(event: any) => {
                       event.stopPropagation();
-                    }}
-                  >
-                    <ShoppingCartOutlinedIcon
-                      sx={{ fontSize: "24px", color: "#00dbe3" }}
-                    />
+                    }}>
+                    <ShoppingCartOutlinedIcon sx={{ fontSize: "24px", color: "#00dbe3" }} />
                   </IconButton>
                 </TableCell>
                 <TableCell align="center">
-                  <IconButton
-                    aria-label="delete"
-                    onClick={(event: any) => {
+                  <IconButton aria-label="delete" onClick={(event: any) => {
                       event.stopPropagation();
-                    }}
-                  >
-                    <RemoveRedEyeOutlinedIcon
-                      sx={{ fontSize: "24px", color: "#00dbe3" }}
-                    />
+                    }}>
+                    <RemoveRedEyeOutlinedIcon sx={{ fontSize: "24px", color: "#00dbe3" }} />
                   </IconButton>
                 </TableCell>
               </TableRow>
-              <TableRow
-                hover
-                sx={{
-                  cursor: "pointer",
-                  "& td": {
-                    padding: "0px 5px",
-                    borderRight: "2px solid #00dbe3"
-                  }
-                }}
-              >
+              <TableRow hover sx={{ cursor: "pointer", "& td": { padding: "0px 5px", borderRight: "2px solid #00dbe3" } }}>
                 <TableCell align="center">
                   <Text2>371</Text2>
                 </TableCell>
@@ -315,27 +188,17 @@ const Dashboard = () => {
                   <Text2>12.28838</Text2>
                 </TableCell>
                 <TableCell align="center">
-                  <IconButton
-                    aria-label="delete"
-                    onClick={(event: any) => {
+                  <IconButton aria-label="delete" onClick={(event: any) => {
                       event.stopPropagation();
-                    }}
-                  >
-                    <ShoppingCartOutlinedIcon
-                      sx={{ fontSize: "24px", color: "#00dbe3" }}
-                    />
+                    }}>
+                    <ShoppingCartOutlinedIcon sx={{ fontSize: "24px", color: "#00dbe3" }} />
                   </IconButton>
                 </TableCell>
                 <TableCell align="center">
-                  <IconButton
-                    aria-label="delete"
-                    onClick={(event: any) => {
+                  <IconButton aria-label="delete" onClick={(event: any) => {
                       event.stopPropagation();
-                    }}
-                  >
-                    <RemoveRedEyeOutlinedIcon
-                      sx={{ fontSize: "24px", color: "#00dbe3" }}
-                    />
+                    }}>
+                    <RemoveRedEyeOutlinedIcon sx={{ fontSize: "24px", color: "#00dbe3" }} />
                   </IconButton>
                 </TableCell>
               </TableRow>
@@ -343,8 +206,7 @@ const Dashboard = () => {
           </Table>
         </Box>
       </Box>
-    </Box>
-  );
+    </Box>;
 };
 
 export default Dashboard;
