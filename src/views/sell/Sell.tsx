@@ -1,7 +1,17 @@
 import React from "react";
-import { Box, Button, Typography, useTheme } from "@mui/material";
+import {
+  Box,
+  Button,
+  Typography,
+  useTheme,
+  Table,
+  TableRow,
+  TableCell,
+  TableBody
+} from "@mui/material";
 import PlaceIcon from "@mui/icons-material/Place";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import Text1 from "../../components/text/Text1";
 
 const Sell = () => {
   const theme = useTheme();
@@ -32,11 +42,86 @@ const Sell = () => {
           >
             SELL
           </Box>
-          <img
-            alt="sell"
-            src="/images/sell.jpg"
-            style={{ width: "100%", display: "block" }}
-          />
+          <Box sx={{ position: "relative", width: "100%" }}>
+            <img
+              alt="sell"
+              src="/images/sell.jpg"
+              style={{ width: "100%", display: "block" }}
+            />
+            <Box
+              sx={{
+                background: "#00dbe3",
+                borderRadius: "6px",
+                width: "367px",
+                textAlign: "center",
+                position: "absolute",
+                right: "-10%",
+                top: "50%",
+                transform: "translate(-50%, -50%)"
+              }}
+            >
+              <Box
+                sx={{
+                  fontSize: "36px",
+                  lineHeight: "60px",
+                  color: "#173039",
+                  fontWeight: 700
+                }}
+              >
+                Original Offer
+              </Box>
+              <Box sx={{ padding: "2px" }}>
+                <Table sx={{ background: "white" }}>
+                  <TableBody>
+                    <TableRow
+                      hover
+                      sx={{
+                        "& td": {
+                          padding: "0px 5px",
+                          borderRight: "2px solid #00dbe3",
+                          width: "110px",
+                          height: "110px"
+                        },
+                        "& td:last-child": { borderRight: "0px" }
+                      }}
+                    >
+                      <TableCell align="center">
+                        <Text1>Yield</Text1>
+                      </TableCell>
+                      <TableCell align="center">
+                        <Text1>10.00%</Text1>
+                      </TableCell>
+                      <TableCell align="center">
+                        <Text1>----</Text1>
+                      </TableCell>
+                    </TableRow>
+                    <TableRow
+                      hover
+                      sx={{
+                        "& td": {
+                          padding: "0px 5px",
+                          borderRight: "2px solid #00dbe3",
+                          width: "110px",
+                          height: "110px"
+                        },
+                        "& td:last-child": { borderRight: "0px" }
+                      }}
+                    >
+                      <TableCell align="center">
+                        <Text1>Price</Text1>
+                      </TableCell>
+                      <TableCell align="center">
+                        <Text1>50.19</Text1>
+                      </TableCell>
+                      <TableCell align="center">
+                        <Text1>NaN</Text1>
+                      </TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </Box>
+            </Box>
+          </Box>
           <Box
             sx={{
               height: "52px",
