@@ -1,12 +1,8 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC } from "react";
 import Box from "@mui/material/Box";
 import { navigations } from "./navigation.data";
 import { Link } from "@mui/material";
-import { useLocation, useNavigate } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { setlogout } from "../../store/auth";
-import { selectLoginUser } from "../../store/auth/selectors";
-import { getFields } from "../../api";
+import { useLocation } from "react-router-dom";
 
 type NavigationData = {
   path: string;
@@ -16,29 +12,6 @@ type NavigationData = {
 const Navigation: FC = () => {
   const location = useLocation();
   const currentPath = location.pathname;
-  const loggedinUser = useAppSelector(selectLoginUser);
-  const dispatch = useAppDispatch();
-  const navigate = useNavigate();
-  const [fields, setFields] = useState<string[]>([]);
-
-  const handleLogout = () => {
-    dispatch(setlogout());
-    navigate("/");
-  };
-
-  const handleGetFileds = async () => {
-    if (loggedinUser) {
-      const res_fields = await getFields({ username: loggedinUser });
-      setFields(res_fields);
-    }
-  };
-
-  useEffect(
-    () => {
-      handleGetFileds();
-    },
-    [loggedinUser]
-  );
 
   return (
     <Box
@@ -111,7 +84,6 @@ const Navigation: FC = () => {
           borderRadius: "6px",
           backgroundColor: "#00dbe3"
         }}
-        onClick={() => handleLogout()}
       >
         Connect Wallet
       </Box>
