@@ -9,7 +9,7 @@ import {
   TableHead,
   TableRow,
   Typography,
-  useTheme
+  useTheme,
 } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import SearchBar from "../../components/text/SearchText";
@@ -55,7 +55,7 @@ const Dashboard = () => {
             [theme.breakpoints.up("sm")]: { maxWidth: "1400px" },
             width: "calc(100vw - 6px)",
             margin: "auto",
-            textAlign: "left"
+            textAlign: "left",
           }}
         >
           <Typography
@@ -64,7 +64,7 @@ const Dashboard = () => {
               lineHeight: "60px",
               color: "#fff",
               fontWeight: 700,
-              marginBottom: "20px"
+              marginBottom: "20px",
             }}
           >
             Filters
@@ -88,7 +88,7 @@ const Dashboard = () => {
                 fontSize: "18px",
                 lineHeight: "60px",
                 color: "#fff",
-                fontWeight: 400
+                fontWeight: 400,
               }}
             >
               Show only whitelisted properties's offers
@@ -102,7 +102,7 @@ const Dashboard = () => {
           backgroundColor: "#fff",
           padding: "80px 24px",
           display: "flex",
-          gap: "20px"
+          gap: "20px",
         }}
       >
         <Box sx={{ display: "flex", flexDirection: "column", gap: "20px" }}>
@@ -117,7 +117,7 @@ const Dashboard = () => {
               lineHeight: "60px",
               textTransform: "uppercase",
               color: "#ffffff",
-              fontWeight: 700
+              fontWeight: 700,
             }}
           >
             Sell
@@ -133,7 +133,7 @@ const Dashboard = () => {
               lineHeight: "60px",
               textTransform: "uppercase",
               color: "#ffffff",
-              fontWeight: 700
+              fontWeight: 700,
             }}
           >
             Buy
@@ -149,7 +149,7 @@ const Dashboard = () => {
               lineHeight: "60px",
               textTransform: "uppercase",
               color: "#ffffff",
-              fontWeight: 700
+              fontWeight: 700,
             }}
           >
             Exchange
@@ -162,7 +162,7 @@ const Dashboard = () => {
               borderCollapse: "unset",
               whiteSpace: "nowrap",
               borderRadius: "8px",
-              border: "2px solid #00dbe3"
+              border: "2px solid #00dbe3",
             }}
           >
             <TableHead sx={{ background: "#f3f3f3" }}>
@@ -170,15 +170,15 @@ const Dashboard = () => {
                 sx={{
                   "& th": {
                     padding: "0px 5px",
-                    borderRight: "2px solid #00dbe3"
+                    borderRight: "2px solid #00dbe3",
                   },
                   "& th:first-child": {
-                    borderTopLeftRadius: "8px"
+                    borderTopLeftRadius: "8px",
                   },
                   "& th:last-child": {
                     borderRight: "0px",
-                    borderTopRightRadius: "8px"
-                  }
+                    borderTopRightRadius: "8px",
+                  },
                 }}
               >
                 <TableCell align="center">
@@ -193,7 +193,7 @@ const Dashboard = () => {
                 <TableCell align="center">
                   <Text2>Rate of Return</Text2>
                 </TableCell>
-                <TableCell align="right">
+                <TableCell align="center">
                   <Text2>offer Yield</Text2>
                 </TableCell>
                 <TableCell align="center">
@@ -212,7 +212,7 @@ const Dashboard = () => {
                   <Text2>Stock</Text2>
                 </TableCell>
                 <TableCell align="center">
-                  <Text2>Card</Text2>
+                  <Text2>Cart</Text2>
                 </TableCell>
                 <TableCell align="center">
                   <Text2>View</Text2>
@@ -226,9 +226,9 @@ const Dashboard = () => {
                   cursor: "pointer",
                   "& td": {
                     padding: "0px 5px",
-                    borderRight: "2px solid #00dbe3"
+                    borderRight: "2px solid #00dbe3",
                   },
-                  "& td:last-child": { borderRight: "0px" }
+                  "& td:last-child": { borderRight: "0px" },
                 }}
               >
                 <TableCell align="center">
@@ -293,9 +293,9 @@ const Dashboard = () => {
                   cursor: "pointer",
                   "& td": {
                     padding: "0px 5px",
-                    borderRight: "2px solid #00dbe3"
+                    borderRight: "2px solid #00dbe3",
                   },
-                  "& td:last-child": { borderRight: "0px" }
+                  "& td:last-child": { borderRight: "0px" },
                 }}
               >
                 <TableCell align="center">
