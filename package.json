@@ -1,5 +1,5 @@
 {
-  "name": "ESTOKK",
+  "name": "ESTOKKYAM(You And Me)",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -33,7 +33,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "npm run client | npm run config",
+    "start": "npm run config | npm run client",
     "client": "react-scripts start",
     "config": "node config-overrides.js",
     "build": "react-scripts build",
