@@ -1,3 +1,5 @@
+const dotenv =  require('dotenv');
+dotenv.config();
 
 // export const BASE_URL = "http://87.237.52.168:3000";
 //export const BASE_URL = "http://localhost:3002";
