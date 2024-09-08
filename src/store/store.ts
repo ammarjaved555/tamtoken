@@ -4,6 +4,7 @@ import blogReducer from "./blogs/index";
 import ticketReducer from "./tickets/index";
 import alertReducer from "./alert/index";
 import chatReducer from "./chat";
+import walletReducer from "./wallet-slice/walletSlice";
 // import thunkMiddleware from "redux-thunk";
 
 export const store = configureStore({
@@ -12,7 +13,8 @@ export const store = configureStore({
     blog: blogReducer,
     ticket: ticketReducer,
     alert: alertReducer,
-    chat: chatReducer
+    chat: chatReducer,
+    wallet: walletReducer,
   }
 });
 

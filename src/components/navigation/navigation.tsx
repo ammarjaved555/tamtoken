@@ -1,8 +1,12 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import Box from "@mui/material/Box";
 import { navigations } from "./navigation.data";
 import { Link } from "@mui/material";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux';
+import { connectWallet } from '../../store/wallet-slice/walletSlice';
+import { AppDispatch, RootState } from '../../store/store';
+import ConnectWalletModal from "../connect-wallet/ConnectWalletModal";
 
 type NavigationData = {
   path: string;
@@ -12,6 +16,19 @@ type NavigationData = {
 const Navigation: FC = () => {
   const location = useLocation();
   const currentPath = location.pathname;
+  const dispatch = useDispatch<AppDispatch>();
+  const navigate = useNavigate();
+  const { account, isMetaMaskInstalled } = useSelector((state: RootState) => state.wallet);
+
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const handleConnectWallet = () => {
+    setModalOpen(true);
+  };
+   const handleConnect = (account: string) => {
+    dispatch(connectWallet());
+    navigate('/connectwallet');
+  };
 
   return (
     <Box
@@ -65,6 +82,7 @@ const Navigation: FC = () => {
         </Box>
       )}
       <Box
+       onClick={handleConnectWallet}
         sx={{
           position: "relative",
           color: "white",
@@ -84,9 +102,15 @@ const Navigation: FC = () => {
           borderRadius: "6px",
           backgroundColor: "#00dbe3"
         }}
+       
       >
-        Connect Wallet
+       {account? "Connected": "Connect Wallet"}
       </Box>
+      <ConnectWalletModal
+        open={modalOpen}
+        onClose={() => setModalOpen(false)}
+        onConnect={handleConnect}
+      />
     </Box>
   );
 };
